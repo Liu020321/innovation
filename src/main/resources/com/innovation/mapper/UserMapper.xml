@@ -6,10 +6,7 @@
 <mapper namespace="com.innovation.mapper.UserMapper">
 
     <resultMap id="userResultMap" type="user">
-        <result property="id" column="id"/>
         <result property="userName" column="user_name"/>
-        <result property="password" column="password"/>
-        <result property="status" column="status"/>
     </resultMap>
 
 
