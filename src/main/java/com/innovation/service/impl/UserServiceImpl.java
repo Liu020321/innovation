@@ -13,12 +13,12 @@ public class UserServiceImpl implements UserService {
     SqlSessionFactory factory = SqlSessionFactoryUtils.getSqlSessionFactory();
 
 
-    public User login(String userName, String password, Integer status) {
+    public User login(String userName, String password) {
         SqlSession sqlSession = factory.openSession();
 
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
-        User userLogin = userMapper.login(userName, password, status);
+        User userLogin = userMapper.login(userName, password);
 
         sqlSession.close();
 
