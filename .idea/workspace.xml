@@ -9,20 +9,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6803aa5-5e26-410e-868d-df3f02d55d74" name="变更" comment="图片变更">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/innovation_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/13831246-37ef-478f-9a96-0ae766fbc5e2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/13831246-37ef-478f-9a96-0ae766fbc5e2.xml" afterDir="false" />
+    <list default="true" id="e6803aa5-5e26-410e-868d-df3f02d55d74" name="变更" comment="添加Cookie">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/innovation/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/innovation/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/innovation/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/innovation/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/innovation/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/innovation/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/innovation/web/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/innovation/web/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/innovation/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/innovation/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/index_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/ind_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,34 +68,34 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Code/JAVAEE/innovation/src/main/webapp/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.build.tools.auto.reload": "ALL",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Code/JAVAEE/innovation/src/main/webapp/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.build.tools.auto.reload&quot;: &quot;ALL&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Code\JAVAEE\innovation\src\main\webapp\images" />
@@ -166,7 +156,18 @@
       <workItem from="1680174699657" duration="123000" />
       <workItem from="1680174842329" duration="46000" />
       <workItem from="1680179927691" duration="812000" />
-      <workItem from="1680180908495" duration="3337000" />
+      <workItem from="1680180908495" duration="3767000" />
+      <workItem from="1680185136925" duration="615000" />
+      <workItem from="1680186188121" duration="1961000" />
+      <workItem from="1680190649804" duration="2215000" />
+      <workItem from="1680194443708" duration="906000" />
+      <workItem from="1680250322077" duration="38000" />
+      <workItem from="1680250396787" duration="1942000" />
+      <workItem from="1680253067626" duration="912000" />
+      <workItem from="1680257112698" duration="1262000" />
+      <workItem from="1680263103022" duration="164000" />
+      <workItem from="1680263286487" duration="5041000" />
+      <workItem from="1680270462135" duration="1546000" />
     </task>
     <task id="LOCAL-00001" summary="初次上传">
       <created>1678108988059</created>
@@ -210,7 +211,42 @@
       <option name="project" value="LOCAL" />
       <updated>1680172478052</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="界面变更">
+      <created>1680184694879</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680184694879</updated>
+    </task>
+    <task id="LOCAL-00008" summary="xml变更">
+      <created>1680184707442</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680184707442</updated>
+    </task>
+    <task id="LOCAL-00009" summary="添加Cookie">
+      <created>1680184722468</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680184722468</updated>
+    </task>
+    <task id="LOCAL-00010" summary="添加Cookie">
+      <created>1680184730251</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680184730251</updated>
+    </task>
+    <task id="LOCAL-00011" summary="添加Cookie">
+      <created>1680184732499</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680184732499</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +259,9 @@
     <MESSAGE value="pom.xml变更" />
     <MESSAGE value="java变更" />
     <MESSAGE value="图片变更" />
-    <option name="LAST_COMMIT_MESSAGE" value="图片变更" />
+    <MESSAGE value="界面变更" />
+    <MESSAGE value="xml变更" />
+    <MESSAGE value="添加Cookie" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加Cookie" />
   </component>
 </project>
