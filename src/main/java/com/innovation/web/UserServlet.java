@@ -17,7 +17,9 @@ import javax.servlet.http.HttpSession;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet("/user/*")
 public class UserServlet extends BaseServlet {
@@ -42,33 +44,12 @@ public class UserServlet extends BaseServlet {
         BufferedReader ur = req.getReader();
         String params = ur.readLine();
 
-        System.out.println(params);
-
-        //将params封装到JSONObject里
-        JSONObject jsonObject = JSON.parseObject(params);
-        //获取JSON数据里的remember值
-        System.out.println(jsonObject);
-        String remember = jsonObject.getString("remember");
-        System.out.println(remember);
-
         User user = JSON.parseObject(params, User.class);
 
         User userLogin = userService.login(user.getUserName(), user.getPassword());
 
 
         if (userLogin != null) {
-            if ("true".equals(remember)) {
-                Cookie c_userName = new Cookie("userName", user.getUserName());
-                Cookie c_password = new Cookie("password", user.getPassword());
-
-                c_userName.setMaxAge(60 * 60 * 24 * 7);
-                c_password.setMaxAge(60 * 60 * 24 * 7);
-
-                resp.addCookie(c_userName);
-                resp.addCookie(c_password);
-            }
-            HttpSession session = req.getSession();
-            session.setAttribute("user", userLogin);
             resp.getWriter().write("success");
 
         } else {
