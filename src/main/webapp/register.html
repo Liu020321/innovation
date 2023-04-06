@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>注册界面</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/theme/favicon.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="css/theme/style.css" rel="stylesheet">
 
 </head>
 
@@ -37,7 +37,7 @@
 
 
 
-<div class="login-form-bg h-100">
+<div class="login-form-bg h-100" id="register">
     <div class="container h-100">
         <div class="row justify-content-center h-100">
             <div class="col-xl-6">
@@ -45,29 +45,34 @@
                     <div class="card login-form mb-0">
                         <div class="card-body pt-5">
 
-                            <a class="text-center" href="index.html"> <h4>返回</h4></a>
+                            <a class="text-center" href="index.html"> <h4>返回主界面</h4></a>
 
-                            <form class="mt-5 mb-5 login-input">
+                            <form class="mt-5 mb-5 login-input" action="" method="">
                                 <div class="form-group">
-                                    <input type="text" class="form-control"  placeholder="账号" required>
+                                    <input v-model="user.userName" id="userName" name="userName" type="text" class="form-control"  placeholder="账号" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="密码" required>
+                                    <input v-model="user.password" id="password" name="password" type="password" class="form-control" placeholder="密码" required>
                                 </div>
 
-                                <div class="col-lg-4">
-                                    <select class="form-select" id="country" required>
+                                <div class="col-xs-4">
+                                    <select v-model="user.status" id="status" name="status" class="form-select" id="country" required>
                                         <option >选择用户</option>
-                                        <option >医生</option>
-                                        <option >患者</option>
+                                        <option value="1">医生</option>
+                                        <option value="0">患者</option>
                                     </select>
                                 </div>
+
+                                <div class="col-xs-8">
+                                    <input v-model="user.checkCode" name="checkCode" type="text" id="checkCode">
+                                    <img id="checkCodeImg" src="/innovation/user/checkCode">
+                                    <a href="#" id="changeImg" >看不清？</a>
+                                </div>
                                 <hr class="my-4">
-                                <button class="btn login-form__btn submit w-100">注册</button>
+                                <button class="btn login-form__btn submit w-100" type="button" @click="register">注册</button>
                             </form>
                             <p class="mt-5 login-form__footer">拥有账号？ <a href="login.html" class="text-primary">登录</a> </p>
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -83,11 +88,66 @@
 <!--**********************************
     Scripts
 ***********************************-->
-<script src="./plugins/common/common.min.js"></script>
-<script src="./js/custom.min.js"></script>
-<script src="./js/settings.js"></script>
-<script src="./js/gleek.js"></script>
-<script src="./js/styleSwitcher.js"></script>
+
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
+
+
+<script src="plugins/common/common.min.js"></script>
+<script src="js/theme/custom.min.js"></script>
+<script src="js/theme/settings.js"></script>
+<script src="js/theme/gleek.js"></script>
+<script src="js/theme/styleSwitcher.js"></script>
+
+<script>
+    document.getElementById("changeImg").onclick = function () {
+        document.getElementById("checkCodeImg").src = "/innovation/user/checkCode?"+new Date().getMilliseconds();
+    }
+</script>
+<script>
+    new Vue({
+        el: "#register",
+        mounted() {
+        },
+        data() {
+            return {
+                user: {
+                    userName: '',
+                    password: '',
+                    status: '',
+                    checkCode:''
+                },
+            }
+        },
+        methods: {
+
+            register() {
+                axios({
+                    method: "post",
+                    url: "http://localhost:8080/innovation/user/register",
+                    data: this.user,
+                }).then(resp => {
+                    if (resp.data === "checkCode_error") {
+
+                        alert("验证码错误")
+                        location.href = "http://localhost:8080/innovation/register.html"
+                    } else if(resp.data==="success") {
+                        alert("注册成功")
+                        location.href = "http://localhost:8080/innovation/login.html"
+                    }else{
+                        alert("用户名重复，请重试")
+                        location.href="http://localhost:8080/innovation/register.html"
+                    }
+
+
+                })
+            }
+        }
+    })
+
+</script>
+
+
 </body>
 </html>
 

@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>登陆界面</title>
+    <title>欢迎登录</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/theme/favicon.png">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="css/theme/style.css" rel="stylesheet">
 
 </head>
 
@@ -37,19 +37,17 @@
                 <div class="form-input-content">
                     <div class="card login-form mb-0">
                         <div class="card-body pt-5">
-                            <a class="text-center" href="index.html"><h4>返回</h4></a>
+                            <a class="text-center" href="index.html"><h4>返回主界面</h4></a>
 
                             <form class="mt-5 mb-5 login-input">
                                 <div class="form-group">
                                     <input v-model="user.userName" id="userName" name="userName" type="text"
-                                           class="form-control" placeholder="账户">
+                                           class="form-control" placeholder="用户名">
                                 </div>
                                 <div class="form-group">
                                     <input v-model="user.password" id="password" name="password" type="password"
                                            class="form-control" placeholder="密码">
                                 </div>
-
-
                                 <div class="form-check">
                                     <input v-model="user.remember" type="checkbox" class="form-check-input"
                                            id="remember" name="remember" value="1">
@@ -57,9 +55,10 @@
                                 </div>
 
                                 <hr class="my-4">
-                                <button class="btn login-form__btn  w-100" type="button" @click="login()">登录</button>
+
+                                <button class="btn login-form__btn submit w-100" type="button" @click="login()">登录</button>
                             </form>
-                            <p class="mt-5 login-form__footer">没有账号？ <a href="register.html"
+                            <p class="mt-5 login-form__footer">没有账户? <a href="register.html"
                                                                             class="text-primary">注册</a></p>
                         </div>
                     </div>
@@ -73,23 +72,21 @@
 <!--**********************************
     Scripts
 ***********************************-->
-<!--<script src="./js/vue.js"></script>-->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="./js/axios.js"></script>
+
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
 
 
-<script src="./plugins/common/common.min.js"></script>
-<script src="./js/custom.min.js"></script>
-<script src="./js/settings.js"></script>
-<script src="./js/gleek.js"></script>
-<script src="./js/styleSwitcher.js"></script>
-
-
+<script src="plugins/common/common.min.js"></script>
+<script src="js/theme/custom.min.js"></script>
+<script src="js/theme/settings.js"></script>
+<script src="js/theme/gleek.js"></script>
+<script src="js/theme/styleSwitcher.js"></script>
 
 <script>
     new Vue({
         el: "#app",
-        mounted(){
+        mounted() {
             // this.getTest()
             this.getCookie()
         },
@@ -164,15 +161,13 @@
             clearCookie() {
                 this.setCookie("", "", -1); //修改2值都为空，天数为负1天就好了
             },
-            getTest(){
+            getTest() {
                 console.log("success")
             }
 
         }
     })
 </script>
-
-
 </body>
 </html>
 
