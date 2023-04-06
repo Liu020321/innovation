@@ -1,240 +1,339 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- basic -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>欢迎来到三刘一陈的网站</title>
+    <meta name="keywords" content="">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>购买界面</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
-
-
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/index/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/index/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/index/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/index/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/index/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="css/index/owl.carousel.min.css">
+    <link rel="stylesoeet" href="css/index/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 </head>
 <body>
-
-<header>
-    <div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4 class="text-white">About</h4>
-                    <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-                </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <h4 class="text-white">Contact</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                        <li><a href="#" class="text-white">Like on Facebook</a></li>
-                        <li><a href="#" class="text-white">Email me</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container">
-            <a href="#" class="navbar-brand d-flex align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                <strong>Album</strong>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+<!-- header section start -->
+<div class="header_section">
+    <div class="container-fluid header_main">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="logo" href="index.html"><img src="images/index/logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        </div>
-    </div>
-</header>
-
-<main>
-
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">商品展示</h1>
-                <p class="lead text-muted">欢迎来到商品购买界面</p>
-                <p>
-                    <a href="#" class="btn btn-primary my-2">按钮1</a>
-                    <a href="#" class="btn btn-secondary my-2">按钮2</a>
-                </p>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="main.html">主界面</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">关于</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">博客</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">产品特点</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">联系我们</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">登录</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><img src="images/index/serach-icon.png"></a>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </nav>
+    </div>
     </section>
 
     <div class="album py-5 bg-light">
         <div class="container">
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">商品1</text></svg>
 
-                        <div class="card-body">
-                            <p class="card-text">价格1</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">购买</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">加入购物车</button>
+            </nav>
+        </div>
+        <!-- banner section start -->
+        <div class="container-fluid">
+            <div class="banner_section layout_padding">
+                <h1 class="banner_taital">欢迎 <br>我们的博客</h1>
+                <div id="my_slider" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="image_main">
+                                <div class="container">
+                                    <img src="images/index/img-1.png" class="image_1">
+                                    <div class="contact_bt"><a href="contact.html">联系我们</a></div>
                                 </div>
-                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="image_main">
+                                <div class="container">
+                                    <img src="images/index/img-1.png" class="image_1">
+                                    <div class="contact_bt"><a href="contact.html">Contact Us</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="image_main">
+                                <div class="container">
+                                    <img src="images/index/img-1.png" class="image_1">
+                                    <div class="contact_bt"><a href="contact.html">Contact Us</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">商品2</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">价格2</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">购买</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">加入购物车</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <!-- banner section end -->
+    </div>
+    <!-- header section end -->
+    <div class="container">
+        <div class="touch_setion">
+            <div class="box_main">
+                <div class="image_2 active">
+                    <h4 class="who_text active">Who am i</h4>
                 </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">商品3</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">价格3</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">购买</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">加入购物车</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="box_main">
+                <div class="image_3">
+                    <h4 class="who_text">Get In Touch</h4>
                 </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">商品4</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">价格4</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">购买</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">加入购物车</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="box_main">
+                <div class="image_4">
+                    <h4 class="who_text">Facebook</h4>
                 </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">商品5</text></svg>
+            </div>
+        </div>
+    </div>
+    <!-- footer section start -->
+    <div class="footer_section layout_padding">
+        <div class="container">
+            <div class="footer_logo"><a href="index.html"><img src="images/index/footer-logo.png"></a></div>
+            <div class="footer_menu">
+                <ul>
+                    <li><a href="main.html">主界面</a></li>
+                    <li><a href="about.html">关于</a></li>
+                    <li><a href="blog.html">博客</a></li>
+                    <li><a href="features.html">产品特点</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="contact_menu">
+                <ul>
+                    <li><a href="#"><img src="images/index/call-icon.png"></a></li>
+                    <li><a href="#">Call : +86 18731130589</a></li>
+                    <li><a href="blog.html"><img src="images/index/mail-icon.png"></a></li>
+                    <li><a href="features.html">2101686730@qq.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- footer section end -->
+    <!-- copyright section start -->
+    <div class="copyright_section">
+        <div class="container">
+            <p class="copyright_text">Copyright 2023 All Right Reserved By.<a href="https://html.design"> Free  html Templates</a></p>
+        </div>
+    </div>
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="js/index/jquery.min.js"></script>
+    <script src="js/index/popper.min.js"></script>
+    <script src="js/index/bootstrap.bundle.min.js"></script>
+    <script src="js/index/jquery-3.0.0.min.js"></script>
+    <script src="js/index/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="js/index/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/index/custom.js"></script>
+    <!-- javascript -->
+    <script src="js/index/owl.carousel.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+</div>
+</body>
+</html>
 
-                        <div class="card-body">
-                            <p class="card-text">价格5</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">购买</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">加入购物车</button>
+//register.html
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>注册界面</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/theme/favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="css/theme/style.css" rel="stylesheet">
+
+</head>
+
+<body class="h-100">
+
+
+
+
+
+<!--*******************
+    Preloader start
+********************-->
+<div id="preloader">
+    <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+        </svg>
+    </div>
+</div>
+<!--*******************
+    Preloader end
+********************-->
+
+
+
+
+
+<div class="login-form-bg h-100" id="register">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-xl-6">
+                <div class="form-input-content">
+                    <div class="card login-form mb-0">
+                        <div class="card-body pt-5">
+
+                            <a class="text-center" href="index.html"> <h4>返回主界面</h4></a>
+
+                            <form class="mt-5 mb-5 login-input" action="" method="">
+                                <div class="form-group">
+                                    <input v-model="user.userName" id="userName" name="userName" type="text" class="form-control"  placeholder="账号" required>
                                 </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">商品6</text></svg>
 
-                        <div class="card-body">
-                            <p class="card-text">价格6</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">购买</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">加入购物车</button>
+                                <div class="form-group">
+                                    <input v-model="user.password" id="password" name="password" type="password" class="form-control" placeholder="密码" required>
                                 </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">商品7</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">价格7</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">购买</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">加入购物车</button>
+                                <div class="col-xs-4">
+                                    <select v-model="user.status" id="status" name="status" class="form-select" id="country" required>
+                                        <option >选择用户</option>
+                                        <option value="1">医生</option>
+                                        <option value="0">患者</option>
+                                    </select>
                                 </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">商品8</text></svg>
 
-                        <div class="card-body">
-                            <p class="card-text">价格8</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">购买</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">加入购物车</button>
+                                <div class="col-xs-8">
+                                    <input v-model="user.checkCode" name="checkCode" type="text" id="checkCode">
+                                    <img id="checkCodeImg" src="/innovation/user/checkCode">
+                                    <a href="#" id="changeImg" >看不清？</a>
                                 </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
+                                <hr class="my-4">
+                                <button class="btn login-form__btn submit w-100" type="button" @click="register">注册</button>
+                            </form>
+                            <p class="mt-5 login-form__footer">拥有账号？ <a href="login.html" class="text-primary">登录</a> </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-</main>
-
-<footer class="text-muted py-5">
-    <div class="container">
-        <p class="float-end mb-1">
-            <a href="#">Back to top</a>
-        </p>
-        <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
-    </div>
-</footer>
+</div>
 
 
-<script src="js/bootstrap.bundle.min.js"></script>
+
+
+
+<!--**********************************
+    Scripts
+***********************************-->
+
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
+
+
+<script src="plugins/common/common.min.js"></script>
+<script src="js/theme/custom.min.js"></script>
+<script src="js/theme/settings.js"></script>
+<script src="js/theme/gleek.js"></script>
+<script src="js/theme/styleSwitcher.js"></script>
+
+<script>
+    document.getElementById("changeImg").onclick = function () {
+        document.getElementById("checkCodeImg").src = "/innovation/user/checkCode?"+new Date().getMilliseconds();
+    }
+</script>
+<script>
+    new Vue({
+        el: "#register",
+        mounted() {
+        },
+        data() {
+            return {
+                user: {
+                    userName: '',
+                    password: '',
+                    status: '',
+                    checkCode:''
+                },
+            }
+        },
+        methods: {
+
+            register() {
+                axios({
+                    method: "post",
+                    url: "http://localhost:8080/innovation/user/register",
+                    data: this.user,
+                }).then(resp => {
+                    if (resp.data === "checkCode_error") {
+
+                        alert("验证码错误")
+                        location.href = "http://localhost:8080/innovation/register.html"
+                    } else if(resp.data==="success") {
+                        alert("注册成功")
+                        location.href = "http://localhost:8080/innovation/login.html"
+                    }else{
+                        alert("用户名重复，请重试")
+                        location.href="http://localhost:8080/innovation/register.html"
+                    }
+
+
+                })
+            }
+        }
+    })
+
+</script>
 
 
 </body>
 </html>
+
