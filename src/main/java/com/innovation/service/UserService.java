@@ -1,6 +1,7 @@
 package com.innovation.service;
 
 import com.innovation.pojo.User;
+import com.innovation.pojo.shoppingcarts;
 
 import java.util.List;
 
@@ -8,4 +9,8 @@ public interface UserService {
 
 
     User login(String userName,String password);
+
+    boolean register(User user);
+
+    List<shoppingcarts> selectAllThings();
 }
