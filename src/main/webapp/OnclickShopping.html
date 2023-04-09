@@ -351,8 +351,10 @@
                                             <p class="card-text">价格1</p>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-sm btn-outline-secondary">购买</button>
-                                                    <button type="button" class="btn btn-sm btn-outline-secondary">加入购物车</button>
+                                                    <div id="onclick">
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary" @click="add()">购买</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary" @click="add()">加入购物车</button>
+                                                    </div>
                                                 </div>
                                                 <small class="text-muted">9 mins</small>
                                             </div>
@@ -499,7 +501,49 @@
 <!--**********************************
     Footer end
 ***********************************-->
-</div>
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
+
+<script>
+    new Vue({
+        el:"#onclick",
+        data:{
+            shoppingcarts:{
+                id:'',
+                name:'',
+                type:'',
+                price:'',
+                count:''
+            },
+            list:[]
+        },
+
+        methods:{
+            //加入购物车
+            add(){
+                axios.post("http://localhost:8080/innovation/buy/addCarts",{id:this.newId,name:this.newName,type:this.newType,price:this.newPrice,count:this.newCount})
+                    .then(res=>{
+                        if(res.status===201){
+                            this.getList()
+                        }
+                    })
+            },
+
+            //获取列表数据
+            getList(){
+                axios.get("http://localhost:8080/innovation/buy/checkAllThings").then(res=>{
+                    console.log(res);
+                    this.list=res.data
+                }).catch(err=>{
+                    console.log(err);
+                })
+            },
+            mounted(){
+                this.getList()
+            }
+        }
+    })
+</script>
 <!--**********************************
     Main wrapper end
 ***********************************-->
