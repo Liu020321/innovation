@@ -1,5 +1,8 @@
 package com.innovation.pojo;
 
+import org.apache.ibatis.type.Alias;
+
+@Alias("shoppingcarts")
 public class shoppingcarts {
     public int getId() {
         return id;
@@ -50,6 +53,7 @@ public class shoppingcarts {
     }
 
     public shoppingcarts() {
+        super();
     }
 
     private int id;

@@ -13,4 +13,8 @@ public interface UserService {
     boolean register(User user);
 
     List<shoppingcarts> selectAllThings();
+
+    boolean addThings(shoppingcarts sc);
+
+    boolean deleteThings(int id);
 }

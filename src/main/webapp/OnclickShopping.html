@@ -507,6 +507,7 @@
 <script>
     new Vue({
         el:"#onclick",
+
         data:{
             shoppingcarts:{
                 id:'',
@@ -518,10 +519,14 @@
             list:[]
         },
 
+        mounted(){
+            this.getList()
+        },
+
         methods:{
             //加入购物车
             add(){
-                axios.post("http://localhost:8080/innovation/buy/addCarts",{id:this.newId,name:this.newName,type:this.newType,price:this.newPrice,count:this.newCount})
+                axios.post("http://localhost:8080/innovation/buy/addCarts",{id:this.id,name:this.name,type:this.type,price:this.price,count:this.count})
                     .then(res=>{
                         if(res.status===201){
                             this.getList()
@@ -538,9 +543,7 @@
                     console.log(err);
                 })
             },
-            mounted(){
-                this.getList()
-            }
+
         }
     })
 </script>
@@ -553,7 +556,7 @@
 ***********************************-->
 <script src="plugins/common/common.min.js"></script>
 <script src="js/theme/custom.min.js"></script>
-<script src="js/theme//settings.js"></script>
+<script src="js/theme/settings.js"></script>
 <script src="js/theme/gleek.js"></script>
 <script src="js/theme/styleSwitcher.js"></script>
 

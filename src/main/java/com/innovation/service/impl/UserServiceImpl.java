@@ -61,4 +61,30 @@ public class UserServiceImpl implements UserService {
         return list;
     }
 
+    public boolean addThings(shoppingcarts sc){
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        boolean b=mapper.addThings(sc);
+        sqlSession.commit();
+        sqlSession.close();
+
+        return b;
+    }
+
+    public boolean deleteThings(int id){
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        boolean b=mapper.deleteThings(id);
+        sqlSession.commit();
+        sqlSession.close();
+
+        return b;
+    }
+
 }
