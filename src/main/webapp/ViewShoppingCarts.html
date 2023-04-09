@@ -343,8 +343,10 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">购物车内容</h4>
-              <button type="button" @click="view()">点击显示购物车内容</button>
-              <div class="table-responsive">
+              <div id="item">
+              <button type="button" class="btn btn-sm btn-outline-secondary" @click="lll()">点击显示购物车内容</button>
+
+                <div class="table-responsive">
                 <table class="table table-striped table-bordered zero-configuration">
                   <thead>
                   <tr>
@@ -356,33 +358,20 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>删除&nbsp;&nbsp;查看</td>
+                  <tr v-for="(item,index) in list" :key="index">
+                    <td>{{item.name}}</td>
+                    <td>{{item.type}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.count}}</td>
+                    <td>
+                      <button @click="">删除</button>
+                      &nbsp;&nbsp;
+                      <button @click="">查看详情</button>
+                    </td>
                   </tr>
-                  <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>删除&nbsp;&nbsp;查看</td>
-                  </tr>
-                  <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>删除&nbsp;&nbsp;查看</td>
-                  </tr>
-                  <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>删除&nbsp;&nbsp;查看</td>
+
+                  <tr v-if="list.length==0">
+                    <td colspan="4">没有购物车数据</td>
                   </tr>
                   </tbody>
                   <tfoot>
@@ -395,6 +384,7 @@
                   </tr>
                   </tfoot>
                 </table>
+                </div>
               </div>
             </div>
           </div>
@@ -422,107 +412,6 @@
   ***********************************-->
 </div>
 
-<script>
-  new Vue({
-    el: "#app",
-    mounted() {
-      // this.getTest()
-      this.getCookie()
-    },
-    data() {
-      return {
-        shoppingcarts: {
-          id: '',
-          name: '',
-          type: '',
-          price:'',
-          count:''
-        },
-      }
-    },
-
-    methods: {
-
-      view() {
-        axios({
-          method: "post",
-          url: "http://localhost:8080/innovation/buy/view",
-          data: this.shoppingcarts,
-        }).then(resp => {
-          if (
-                  resp.data === "success") {
-            if (this.user.remember == true) {
-              console.log("cookie success");
-              //传入账号名，密码，和保存天数3个参数
-              this.setCookie(this.shoppingcarts.id,this.shoppingcarts.name,
-                      this.shoppingcarts.type,this.shoppingcarts.price,
-                      this.shoppingcarts.count, 7);
-            } else {
-              console.log("清空Cookie");
-              //清空Cookie
-              this.clearCookie();
-            }
-            console.log("查询成功");
-            location.href = "http://localhost:8080/innovation/main.html"
-          } else {
-            alert("查询失败，请重试")
-            location.href = "http://localhost:8080/innovation/ViewShoppingCarts.html"
-          }
-
-
-        })
-      },
-
-      setCookie(s_id, s_name,s_type,s_price,s_count, exdays) {
-        var exdate = new Date(); //获取时间
-        exdate.setTime(exdate.getTime() + 24 * 60 * 60 * 1000 * exdays); //保存的天数
-        //字符串拼接cookie
-        window.document.cookie = "id" + "=" + s_id + ";path=/;expires=" + exdate.toGMTString();
-        window.document.cookie = "name" + "=" + s_name + ";path=/;expires=" + exdate.toGMTString();
-        window.document.cookie = "type" + "=" + s_type + ";path=/;expires=" + exdate.toGMTString();
-        window.document.cookie = "price" + "=" + s_price + ";path=/;expires=" + exdate.toGMTString();
-        window.document.cookie = "count" + "=" + s_count + ";path=/;expires=" + exdate.toGMTString();
-
-      },
-      //读取cookie
-      getCookie() {
-        console.log("success")
-        var _this = this;
-        if (document.cookie.length > 0) {
-          var arr = document.cookie.split('; '); //这里显示的格式需要切割一下自己可输出看下
-          for (var i = 0; i < arr.length; i++) {
-            var arr2 = arr[i].split('='); //再次切割
-            //判断查找相对应的值
-            if (arr2[0] == 's_id') {
-              _this.shoppingcarts.id = arr2[1];
-              //保存到保存数据的地方
-            } else if (arr2[0] == 's_name') {
-              _this.shoppingcarts.name = arr2[1];
-              console.log(_this.shoppingcarts.name)
-            }else if (arr2[0] == 's_type') {
-              _this.shoppingcarts.type = arr2[1];
-              console.log(_this.shoppingcarts.type)
-            }else if (arr2[0] == 's_price') {
-              _this.shoppingcarts.price = arr2[1];
-              console.log(_this.shoppingcarts.price)
-            }else if (arr2[0] == 's_count') {
-              _this.shoppingcarts.count = arr2[1];
-              console.log(_this.shoppingcarts.count)
-            }
-          }
-        }
-      },
-      //清除cookie
-      clearCookie() {
-        this.setCookie("", "", -1); //修改2值都为空，天数为负1天就好了
-      },
-      getTest() {
-        console.log("success")
-      }
-
-    }
-  })
-</script>
 <!--**********************************
     Main wrapper end
 ***********************************-->
@@ -530,11 +419,95 @@
 <!--**********************************
     Scripts
 ***********************************-->
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
 <script src="plugins/common/common.min.js"></script>
 <script src="js/theme/custom.min.js"></script>
-<script src="js/theme//settings.js"></script>
+<script src="js/theme/settings.js"></script>
 <script src="js/theme/gleek.js"></script>
 <script src="js/theme/styleSwitcher.js"></script>
+
+<script>
+  new Vue({
+    el: "#item",
+    data() {
+      return {
+          list:[]
+      }
+    },
+
+    methods: {
+
+      lll() {
+        axios({
+          method: "get",
+          url: "http://localhost:8080/innovation/buy/checkAllThings",
+          // data: this.user,
+        }).then(res => {
+          this.list=res.data()
+
+        })
+
+      },
+      mounted(){
+        this.lll()
+      }
+  },
+        })
+
+</script>
+    //
+    //   setCookie(s_id, s_name,s_type,s_price,s_count, exdays) {
+    //     var exdate = new Date(); //获取时间
+    //     exdate.setTime(exdate.getTime() + 24 * 60 * 60 * 1000 * exdays); //保存的天数
+    //     //字符串拼接cookie
+    //     window.document.cookie = "id" + "=" + s_id + ";path=/;expires=" + exdate.toGMTString();
+    //     window.document.cookie = "name" + "=" + s_name + ";path=/;expires=" + exdate.toGMTString();
+    //     window.document.cookie = "type" + "=" + s_type + ";path=/;expires=" + exdate.toGMTString();
+    //     window.document.cookie = "price" + "=" + s_price + ";path=/;expires=" + exdate.toGMTString();
+    //     window.document.cookie = "count" + "=" + s_count + ";path=/;expires=" + exdate.toGMTString();
+    //
+    //   },
+    //   //读取cookie
+    //   getCookie() {
+    //     console.log("success")
+    //     var _this = this;
+    //     if (document.cookie.length > 0) {
+    //       var arr = document.cookie.split('; '); //这里显示的格式需要切割一下自己可输出看下
+    //       for (var i = 0; i < arr.length; i++) {
+    //         var arr2 = arr[i].split('='); //再次切割
+    //         //判断查找相对应的值
+    //         if (arr2[0] == 's_id') {
+    //           _this.shoppingcarts.id = arr2[1];
+    //           //保存到保存数据的地方
+    //         } else if (arr2[0] == 's_name') {
+    //           _this.shoppingcarts.name = arr2[1];
+    //           console.log(_this.shoppingcarts.name)
+    //         }else if (arr2[0] == 's_type') {
+    //           _this.shoppingcarts.type = arr2[1];
+    //           console.log(_this.shoppingcarts.type)
+    //         }else if (arr2[0] == 's_price') {
+    //           _this.shoppingcarts.price = arr2[1];
+    //           console.log(_this.shoppingcarts.price)
+    //         }else if (arr2[0] == 's_count') {
+    //           _this.shoppingcarts.count = arr2[1];
+    //           console.log(_this.shoppingcarts.count)
+    //         }
+    //       }
+    //     }
+    //   },
+    //   //清除cookie
+    //   clearCookie() {
+    //     this.setCookie("", "", -1); //修改2值都为空，天数为负1天就好了
+    //   },
+    //   getTest() {
+    //     console.log("success")
+    //   }
+    //
+    // }
 
 <!-- Chartjs -->
 <script src="plugins/chart.js/Chart.bundle.min.js"></script>
@@ -556,6 +529,8 @@
 
 
 <script src="js/theme/dashboard/dashboard-1.js"></script>
+
+
 
 </body>
 
