@@ -33,4 +33,7 @@ public interface UserMapper {
 
     @Delete("delete from shoppingcarts where id=#{id}")
     boolean deleteThings(int id);
+
+    @Delete("delete * from shoppingcarts")
+    boolean deleteAll();
 }
