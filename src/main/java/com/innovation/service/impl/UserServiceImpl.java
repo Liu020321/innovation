@@ -87,4 +87,18 @@ public class UserServiceImpl implements UserService {
         return b;
     }
 
+    public boolean deleteAll(){
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        boolean b=mapper.deleteAll();
+
+        sqlSession.commit();
+        sqlSession.close();
+
+        return b;
+    }
+
 }

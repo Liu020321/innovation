@@ -343,6 +343,9 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">购物车内容</h4>
+              <div id="pay">
+
+
               <div class="table-responsive">
                 <table class="table table-striped table-bordered zero-configuration">
                   <thead>
@@ -355,55 +358,87 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>立即支付</td>
+
+                  <tr v-for="(ooo,index) in list" :key="index">
+                    <td>{{ooo.name}}</td>
+                    <td>{{ooo.type}}</td>
+                    <td>{{ooo.price}}</td>
+                    <td>{{ooo.count}}</td>
+                    <td>
+                      <button @click="deleteBy(ooo.id)" class="btn btn-sm btn-outline-secondary">支付</button>
+                    </td>
                   </tr>
-                  <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>立即支付</td>
-                  </tr>
-                  <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>立即支付</td>
-                  </tr>
-                  <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>立即支付</td>
+
+                  <tr v-if="list.length==0">
+                    <td colspan="5">没有购物车数据</td>
                   </tr>
                   </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>商品名称</th>
-                    <th>商品类型</th>
-                    <th>商品价格</th>
-                    <th>商品数量</th>
-                    <th>相关操作</th>
-                  </tr>
-                  </tfoot>
                 </table>
-              </div>
+                </div>
+
               <div style="float:left">总价为：</div>
-              <button type="button" class="btn mb-1 btn-outline-secondary" style="float:right">一键支付</button>
-            </div>
+              <button type="button" class="btn mb-1 btn-outline-secondary" style="float:right" @click="deleteAll()">一键支付</button>
+              </div>
+              </div>
           </div>
         </div>
       </div>
     </div>
     <!-- #/ container -->
   </div>
+
+  <script src="js/vue.js"></script>
+  <script src="js/axios.js"></script>
+
+  <script>
+    new Vue({
+      el:"#pay",
+      data:{
+        shoppingcarts:{
+          id:'',
+          name:'',
+          type:'',
+          price:'',
+          count:''
+        },
+        list:[]
+      },
+
+      mounted(){
+        this.getList()
+      },
+
+      methods:{
+        //清空购物车
+        deleteAll(){
+          axios.post("http://localhost:8080/innovation/buy/deleteAll").then(res=>{
+            this.list=res.data
+          }).catch(err=>{
+            console.log(err);
+          })
+        },
+
+        //获取列表数据
+        getList(){
+          axios.get("http://localhost:8080/innovation/buy/view").then(res=>{
+            console.log(res);
+            this.list=res.data
+          }).catch(err=>{
+            console.log(err);
+          })
+        },
+
+        deleteData(id){
+          axios.delete("http://localhost:8080/innovation/buy/deleteCarts/${id}").then(res=>{
+            this.getList()
+          }).catch(err=>{
+            alert("请求失败！");
+          })
+        }
+
+      }
+    })
+  </script>
   <!--**********************************
       Content body end
   ***********************************-->
@@ -431,7 +466,7 @@
 ***********************************-->
 <script src="plugins/common/common.min.js"></script>
 <script src="js/theme/custom.min.js"></script>
-<script src="js/theme//settings.js"></script>
+<script src="js/theme/settings.js"></script>
 <script src="js/theme/gleek.js"></script>
 <script src="js/theme/styleSwitcher.js"></script>
 

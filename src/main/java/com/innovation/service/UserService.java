@@ -17,4 +17,6 @@ public interface UserService {
     boolean addThings(shoppingcarts sc);
 
     boolean deleteThings(int id);
+
+    boolean deleteAll();
 }

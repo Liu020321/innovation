@@ -84,13 +84,17 @@ public class BuyServlet extends BaseServlet{
         resp.setContentType("text/json;charset=utf-8");
         resp.getWriter().write(result);
 
+    }
 
+    public void deleteAll(HttpServletRequest req,HttpServletResponse resp) throws IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
 
+        boolean b=userService.deleteAll();
 
+        String result=JSON.toJSONString(b);
 
-
-
-
-
+        resp.setContentType("text/json;charset=utf-8");
+        resp.getWriter().write(result);
     }
 }
