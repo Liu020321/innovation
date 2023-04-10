@@ -70,19 +70,33 @@ public class BuyServlet extends BaseServlet{
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
+        //System.out.println("来到buyServlet啦！");
         BufferedReader ur = req.getReader();
         String params = ur.readLine();
 
-        shoppingcarts ss=JSON.parseObject(params,shoppingcarts.class);
-        System.out.println(ss);
+        String id1=req.getParameter("id");
+        System.out.println(id1);
+        //shoppingcarts ss=JSON.parseObject(params,shoppingcarts.class);
+        int id=Integer.parseInt(id1);
 
-        boolean b=userService.deleteThings(ss.getCount());
+        boolean b=userService.deleteThings(id);
+        System.out.println(b);
 
-        String result=JSON.toJSONString(b);
+        if(b){//true
 
-        //响应数据
-        resp.setContentType("text/json;charset=utf-8");
-        resp.getWriter().write(result);
+            //响应数据
+            resp.setContentType("text/json;charset=utf-8");
+            resp.getWriter().write("success");
+        }else{
+
+            //响应数据
+            resp.setContentType("text/json;charset=utf-8");
+            resp.getWriter().write("false");
+        }
+
+
+
+
 
     }
 

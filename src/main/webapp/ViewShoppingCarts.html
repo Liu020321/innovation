@@ -457,9 +457,11 @@
 
             //删除某条记录
             deleteData(id){
-                axios.delete("http://localhost:8080/innovation/buy/deleteCarts/${id}").then(res=>{
+                axios.get("http://localhost:8080/innovation/buy/deleteCarts?id="+id).then(res=>{
                     console.log(id);
-                    this.view()
+                    if(res.data==="success"){
+                        this.view();
+                    }
                 }).catch(function(error){
                     alert("请求失败！")
                 })
