@@ -431,7 +431,7 @@
         },
 
         deleteData(id){
-          axios.delete("http://localhost:8080/innovation/buy/deleteCarts/${id}").then(res=>{
+          axios.delete("http://localhost:8080/innovation/buy/deleteCarts?id="+id).then(res=>{
             this.getList()
           }).catch(err=>{
             alert("请求失败！");
