@@ -2,6 +2,7 @@ package com.innovation.service.impl;
 
 import com.innovation.mapper.UserMapper;
 import com.innovation.pojo.User;
+import com.innovation.pojo.shoppingcarts;
 import com.innovation.service.UserService;
 import com.innovation.util.SqlSessionFactoryUtils;
 import org.apache.ibatis.session.SqlSession;
@@ -44,6 +45,60 @@ public class UserServiceImpl implements UserService {
         sqlSession.close();
 
         return u == null;
+    }
+
+    @Override
+    public List<shoppingcarts> selectAllThings() {
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        List<shoppingcarts> list=mapper.selectAllThings();
+
+        sqlSession.close();
+
+        return list;
+    }
+
+    public boolean addThings(shoppingcarts sc){
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        boolean b=mapper.addThings(sc);
+        sqlSession.commit();
+        sqlSession.close();
+
+        return b;
+    }
+
+    public boolean deleteThings(int id){
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        boolean b=mapper.deleteThings(id);
+        sqlSession.commit();
+        sqlSession.close();
+
+        return b;
+    }
+
+    public boolean deleteAll(){
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        boolean b=mapper.deleteAll();
+
+        sqlSession.commit();
+        sqlSession.close();
+
+        return b;
     }
 
 }

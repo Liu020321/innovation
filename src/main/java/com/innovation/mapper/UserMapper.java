@@ -1,10 +1,8 @@
 package com.innovation.mapper;
 
 import com.innovation.pojo.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.ResultMap;
-import org.apache.ibatis.annotations.Select;
+import com.innovation.pojo.shoppingcarts;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -26,4 +24,16 @@ public interface UserMapper {
 
     @Insert("insert into tb_user values(null,#{userName},#{password},#{status})")
     void add(User user);
+
+    @Select("select * from shoppingcarts")
+    List<shoppingcarts> selectAllThings();
+
+    @Insert("insert into shoppingcarts values(#{id},#{name},#{type},#{price},#{count})")
+    boolean addThings(shoppingcarts sc);
+
+    @Delete("delete from shoppingcarts where id=#{id}")
+    boolean deleteThings(int id);
+
+    @Delete("delete * from shoppingcarts")
+    boolean deleteAll();
 }
