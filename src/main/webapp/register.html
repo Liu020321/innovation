@@ -67,7 +67,7 @@
                                 <div class="col-xs-8">
                                     <input v-model="user.checkCode" name="checkCode" type="text" id="checkCode">
                                     <img id="checkCodeImg" src="/innovation/user/checkCode">
-                                    <a href="#" id="changeImg" >看不清？</a>
+                                    <a href="#" id="changeImg" @click="refresh" >看不清？</a>
                                 </div>
                                 <hr class="my-4">
                                 <button class="btn login-form__btn submit w-100" type="button" @click="register">注册</button>
@@ -99,11 +99,11 @@
 <script src="js/theme/gleek.js"></script>
 <script src="js/theme/styleSwitcher.js"></script>
 
-<script>
+<!--<script>
     document.getElementById("changeImg").onclick = function () {
-        document.getElementById("checkCodeImg").src = "/innovation/user/checkCode?"+new Date().getMilliseconds();
+        document.getElementById("checkCodeImg").src = "http://localhost:8080/innovation/user/checkCode?"+new Date().getMilliseconds();
     }
-</script>
+</script>-->
 <script>
     new Vue({
         el: "#register",
@@ -120,6 +120,9 @@
             }
         },
         methods: {
+            refresh() {
+                document.getElementById("checkCodeImg").src = "http://localhost:8080/innovation/user/checkCode?"+new Date().getMilliseconds();
+            },
 
             register() {
                 axios({
@@ -130,13 +133,13 @@
                     if (resp.data === "checkCode_error") {
 
                         alert("验证码错误")
-                        location.href = "http://localhost:8080/innovation/register.html"
+                        // location.href = "http://localhost:8080/innovation/register.html"
                     } else if(resp.data==="success") {
                         alert("注册成功")
                         location.href = "http://localhost:8080/innovation/login.html"
                     }else{
                         alert("用户名重复，请重试")
-                        location.href="http://localhost:8080/innovation/register.html"
+                        // location.href="http://localhost:8080/innovation/register.html"
                     }
 
 
