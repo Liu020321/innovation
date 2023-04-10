@@ -106,9 +106,15 @@ public class BuyServlet extends BaseServlet{
 
         boolean b=userService.deleteAll();
 
-        String result=JSON.toJSONString(b);
+        if(b){
+            resp.setContentType("text/json;charset=utf-8");
+            resp.getWriter().write("success");
 
-        resp.setContentType("text/json;charset=utf-8");
-        resp.getWriter().write(result);
+        }else{
+            resp.setContentType("text/json;charset=utf-8");
+            resp.getWriter().write("fail");
+        }
+
+
     }
 }
