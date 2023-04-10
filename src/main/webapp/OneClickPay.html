@@ -411,8 +411,10 @@
       methods:{
         //清空购物车
         deleteAll(){
-          axios.post("http://localhost:8080/innovation/buy/deleteAll").then(res=>{
-            this.list=res.data
+          axios.post("http://localhost:8080/innovation/buy/deleteAll").then(resp=>{
+            if(resp.data==="success"){
+              this.getList();
+            }
           }).catch(err=>{
             console.log(err);
           })
