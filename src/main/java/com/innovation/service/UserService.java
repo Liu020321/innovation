@@ -2,6 +2,7 @@ package com.innovation.service;
 
 import com.innovation.pojo.User;
 import com.innovation.pojo.shoppingcarts;
+import com.innovation.pojo.things;
 
 import java.util.List;
 
@@ -19,4 +20,6 @@ public interface UserService {
     boolean deleteThings(int id);
 
     boolean deleteAll();
+
+    List<things> getAllThings();
 }

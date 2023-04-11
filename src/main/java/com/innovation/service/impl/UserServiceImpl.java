@@ -3,6 +3,7 @@ package com.innovation.service.impl;
 import com.innovation.mapper.UserMapper;
 import com.innovation.pojo.User;
 import com.innovation.pojo.shoppingcarts;
+import com.innovation.pojo.things;
 import com.innovation.service.UserService;
 import com.innovation.util.SqlSessionFactoryUtils;
 import org.apache.ibatis.session.SqlSession;
@@ -99,6 +100,18 @@ public class UserServiceImpl implements UserService {
         sqlSession.close();
 
         return b;
+    }
+
+    public List<things> getAllThings(){
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        List<things> list=mapper.getAllThings();
+        sqlSession.close();
+
+        return list;
     }
 
 }

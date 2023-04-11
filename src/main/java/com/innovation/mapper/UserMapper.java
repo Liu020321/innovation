@@ -2,6 +2,7 @@ package com.innovation.mapper;
 
 import com.innovation.pojo.User;
 import com.innovation.pojo.shoppingcarts;
+import com.innovation.pojo.things;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -36,4 +37,7 @@ public interface UserMapper {
 
     @Delete("delete from shoppingcarts")
     boolean deleteAll();
+
+    @Select("select * from things")
+    List<things> getAllThings();
 }

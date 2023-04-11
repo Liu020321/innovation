@@ -55,13 +55,7 @@ public class BuyServlet extends BaseServlet{
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
-        BufferedReader ur = req.getReader();
-        String params = ur.readLine();
 
-        shoppingcarts ss = JSON.parseObject(params, shoppingcarts.class);
-
-        //shoppingcarts sc=new shoppingcarts();
-        boolean b=userService.addThings(ss);
 
     }
 
