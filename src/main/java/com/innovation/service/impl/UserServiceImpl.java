@@ -114,4 +114,15 @@ public class UserServiceImpl implements UserService {
         return list;
     }
 
+    public shoppingcarts getSelf(int id){
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        shoppingcarts ss=mapper.getSelf(id);
+        sqlSession.close();
+        return ss;
+    }
+
 }

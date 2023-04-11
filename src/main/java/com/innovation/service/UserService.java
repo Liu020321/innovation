@@ -22,4 +22,6 @@ public interface UserService {
     boolean deleteAll();
 
     List<things> getAllThings();
+
+    shoppingcarts getSelf(int id);
 }

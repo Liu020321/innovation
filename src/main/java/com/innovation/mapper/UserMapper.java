@@ -40,4 +40,7 @@ public interface UserMapper {
 
     @Select("select * from things")
     List<things> getAllThings();
+
+    @Select("select * from shoppingcarts where id=#{id}")
+    shoppingcarts getSelf(int id);
 }

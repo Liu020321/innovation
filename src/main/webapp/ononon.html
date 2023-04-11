@@ -416,11 +416,11 @@
 
     methods:{
       //加入购物车
-      add(){
-        axios.post("http://localhost:8080/innovation/buy/addCarts",{id:this.id,name:this.name,type:this.type,price:this.price,count:this.count})
+      add(id){
+        axios.get("http://localhost:8080/innovation/buy/addCarts?id="+id)
                 .then(res=>{
-                  if(res.status===201){
-                    this.getList()
+                  if(res.data==="success"){
+                    this.getList();
                   }
                 })
       },
