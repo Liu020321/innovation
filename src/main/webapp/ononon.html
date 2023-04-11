@@ -342,32 +342,30 @@
           <div class="card">
             <div class="card-body">
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
+                <div id="onclick">
                 <table>
-                  <c:forEach items="${}" var="a">
-                  <tr>
+                  <tr v-for="(onclick,index) in list" :key="index">
                     <td>
                       <div class="col">
                         <div class="card shadow-sm">
-                          <img src="images/index/dog.png"/>
+                          <img src="images/index/dog1.png"/>
 
                           <div class="card-body">
-                            <p class="card-text">价格1</p>
+                            <p class="card-text">{{onclick.price}}</p>
+                            <p class="card-text">{{onclick.name}}</p>
+                            <p class="card-text">{{onclick.type}}</p>
                             <div class="d-flex justify-content-between align-items-center">
                               <div class="btn-group">
-                                <div id="onclick">
-                                  <button type="button" class="btn btn-sm btn-outline-secondary" @click="add()">加入购物车</button>
-                                </div>
+                                  <button type="button" class="btn btn-sm btn-outline-secondary" @click="add(onclick)">加入购物车</button>
                               </div>
-                              <small class="text-muted">9 mins</small>
                             </div>
                           </div>
                         </div>
                       </div>
                     </td>
                   </tr>
-                  </c:forEach>
                 </table>
+                </div>
               </div>
             </div>
           </div>
@@ -429,13 +427,16 @@
 
       //获取列表数据
       getList(){
-        axios.get("http://localhost:8080/innovation/buy/checkAllThings").then(res=>{
-          console.log(res);
-          this.list=res.data
+        axios.get("http://localhost:8080/innovation/buy/getAllThings").then(resp=>{
+          console.log(resp);
+          this.list=resp.data
         }).catch(err=>{
           console.log(err);
         })
       },
+
+      //获取所有的购物车数据
+
 
     }
   })

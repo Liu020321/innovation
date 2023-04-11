@@ -3,6 +3,7 @@ package com.innovation.web;
 import com.alibaba.fastjson.JSON;
 import com.innovation.pojo.User;
 import com.innovation.pojo.shoppingcarts;
+import com.innovation.pojo.things;
 import com.innovation.service.UserService;
 import com.innovation.service.impl.UserServiceImpl;
 
@@ -110,5 +111,18 @@ public class BuyServlet extends BaseServlet{
         }
 
 
+    }
+
+    public void getAllThings(HttpServletRequest req,HttpServletResponse resp) throws IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
+
+        List<things> list=userService.getAllThings();
+
+        String jsonString=JSON.toJSONString(list);
+
+        //响应数据
+        resp.setContentType("text/json;charset=utf-8");
+        resp.getWriter().write(jsonString);
     }
 }
