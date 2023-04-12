@@ -3,6 +3,7 @@ package com.innovation.service;
 import com.innovation.pojo.User;
 import com.innovation.pojo.shoppingcarts;
 import com.innovation.pojo.things;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -24,4 +25,12 @@ public interface UserService {
     List<things> getAllThings();
 
     shoppingcarts getSelf(int id);
+
+    boolean ifOk(String name);
+
+    boolean ifUpdateOk(String name);
+
+    int getOnePrice(String name);
+
+    String getOneType(String name);
 }

@@ -56,21 +56,49 @@ public class BuyServlet extends BaseServlet{
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
-        String id1=req.getParameter("id");
-        int id=Integer.parseInt(id1);
 
-        shoppingcarts ss=userService.getSelf(id);
+        String name=req.getParameter("name");
 
-        boolean b=userService.addThings(ss);
+        System.out.println(name);
 
-        if(b){
-            resp.setContentType("text/json;charset=utf-8");
-            resp.getWriter().write("success");
-        }else{
-            resp.setContentType("text/json;charset=utf-8");
-            resp.getWriter().write("fail");
+        boolean b=userService.ifOk(name);
+
+
+        if(b){//如果数据已经存在
+            //执行修改数据操作
+            boolean t=userService.ifUpdateOk(name);
+            if(t){//如果修改成功
+                resp.setContentType("text/json;charset=utf-8");
+                resp.getWriter().write("success");
+            }else{//修改失败
+                resp.setContentType("text/json;charset=utf-8");
+                resp.getWriter().write("fail");
+            }
+
+        }else{//数据并不存在
+            //执行添加操作
+            int price=userService.getOnePrice(name);
+            String type=userService.getOneType(name);
+
+            shoppingcarts sc=new shoppingcarts();
+            sc.setName(name);
+            sc.setType(type);
+            sc.setPrice(price);
+            sc.setCount(1);
+
+            boolean m=userService.addThings(sc);
+
+            if(m){//添加成功
+                resp.setContentType("text/json;charset=utf-8");
+                resp.getWriter().write("success");
+
+            }else{//添加失败
+                resp.setContentType("text/json;charset=utf-8");
+                resp.getWriter().write("fail");
+
+            }
+
         }
-
     }
 
     //删除数据

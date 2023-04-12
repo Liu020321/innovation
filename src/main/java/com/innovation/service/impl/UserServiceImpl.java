@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
         //4. 判断用户名是否存在
         User u = mapper.selectByUserName(user.getUserName());
 
-        if(u == null){
+        if (u == null) {
             // 用户名不存在，注册
             mapper.add(user);
             sqlSession.commit();
@@ -55,46 +55,46 @@ public class UserServiceImpl implements UserService {
         //3. 获取UserMapper
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        List<shoppingcarts> list=mapper.selectAllThings();
+        List<shoppingcarts> list = mapper.selectAllThings();
 
         sqlSession.close();
 
         return list;
     }
 
-    public boolean addThings(shoppingcarts sc){
+    public boolean addThings(shoppingcarts sc) {
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
         //3. 获取UserMapper
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        boolean b=mapper.addThings(sc);
+        boolean b = mapper.addThings(sc);
         sqlSession.commit();
         sqlSession.close();
 
         return b;
     }
 
-    public boolean deleteThings(int id){
+    public boolean deleteThings(int id) {
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
         //3. 获取UserMapper
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        boolean b=mapper.deleteThings(id);
+        boolean b = mapper.deleteThings(id);
         sqlSession.commit();
         sqlSession.close();
 
         return b;
     }
 
-    public boolean deleteAll(){
+    public boolean deleteAll() {
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
         //3. 获取UserMapper
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        boolean b=mapper.deleteAll();
+        boolean b = mapper.deleteAll();
 
         sqlSession.commit();
         sqlSession.close();
@@ -102,27 +102,72 @@ public class UserServiceImpl implements UserService {
         return b;
     }
 
-    public List<things> getAllThings(){
+    public List<things> getAllThings() {
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
         //3. 获取UserMapper
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        List<things> list=mapper.getAllThings();
+        List<things> list = mapper.getAllThings();
         sqlSession.close();
 
         return list;
     }
 
-    public shoppingcarts getSelf(int id){
+    public shoppingcarts getSelf(int id) {
         //2. 获取SqlSession
         SqlSession sqlSession = factory.openSession();
         //3. 获取UserMapper
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        shoppingcarts ss=mapper.getSelf(id);
+        shoppingcarts ss = mapper.getSelf(id);
         sqlSession.close();
         return ss;
+    }
+
+    public boolean ifOk(String name) {
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        boolean b = mapper.ifOk(name);
+        sqlSession.close();
+        return b;
+    }
+
+    public boolean ifUpdateOk(String name) {
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        boolean b = mapper.ifUpdateOk(name);
+        sqlSession.commit();
+        sqlSession.close();
+        return b;
+    }
+
+    public int getOnePrice(String name) {
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        int price=mapper.getOnePrice(name);
+        sqlSession.close();
+        return price;
+    }
+
+    public String getOneType(String name) {
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        String type=mapper.getOneType(name);
+        sqlSession.close();
+        return type;
     }
 
 }
