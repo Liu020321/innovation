@@ -57,7 +57,10 @@ public class BuyServlet extends BaseServlet{
         resp.setContentType("text/html;charset=utf-8");
 
 
-        String name=req.getParameter("name");
+        String name1=req.getParameter("name");
+        System.out.println(name1);
+
+        String name=JSON.toJSONString(name1);
 
         System.out.println(name);
 

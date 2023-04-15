@@ -354,7 +354,7 @@
                             <p class="card-text">{{on.price}}</p>
                             <p class="card-text">{{on.name}}</p>
                             <p class="card-text">{{on.type}}</p>
-                                  <button type="button" class="btn btn-sm btn-outline-secondary" @click="add(on.name)">加入购物车</button>
+                                  <button type="button" class="btn btn-sm btn-outline-secondary" @click="addData(on.name)">加入购物车</button>
                           </div>
                         </div>
                       </div>
@@ -411,9 +411,10 @@
     },
 
     methods:{
+      responseType:'arraybuffer',
       //加入购物车
-      add(name){
-        axios.get("http://localhost:8080/innovation/buy/addCarts?name="+name)
+      addData(name){
+        axios.add("http://localhost:8080/innovation/buy/addCarts?name="+name)
                 .then(resp=>{
                   if(resp.data==="success"){
                     this.getList();
