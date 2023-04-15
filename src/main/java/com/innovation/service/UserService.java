@@ -33,4 +33,6 @@ public interface UserService {
     int getOnePrice(String name);
 
     String getOneType(String name);
+
+    List<things> getType(String type);
 }

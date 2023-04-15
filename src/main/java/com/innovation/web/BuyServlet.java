@@ -173,4 +173,27 @@ public class BuyServlet extends BaseServlet{
         resp.setContentType("text/json;charset=utf-8");
         resp.getWriter().write(jsonString);
     }
+
+    public void checkIt(HttpServletRequest req,HttpServletResponse resp) throws IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
+
+        BufferedReader ur = req.getReader();
+        String params = ur.readLine();
+
+        String type=req.getParameter("type");//获取到类型
+
+        System.out.println(type);
+
+        List<things> list=userService.getType(type);
+
+        //转成json类型
+        String jsonString=JSON.toJSONString(list);
+
+        //响应数据
+        resp.setContentType("text/json;charset=utf-8");
+        resp.getWriter().write(jsonString);
+
+    }
+
 }

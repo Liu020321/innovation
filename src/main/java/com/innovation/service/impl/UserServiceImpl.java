@@ -170,4 +170,17 @@ public class UserServiceImpl implements UserService {
         return type;
     }
 
+    public List<things> getType(String type){
+        //2. 获取SqlSession
+        SqlSession sqlSession = factory.openSession();
+        //3. 获取UserMapper
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        List<things> list=mapper.getType(type);
+
+        sqlSession.close();
+
+        return list;
+    }
+
 }

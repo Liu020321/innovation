@@ -343,12 +343,18 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-
+                        <div id="vv" align="center">
                         <div class="btn-group">
+
                             <section class="voice-box">
-                                        <input class="form-control" style="width:1100px" type="search" name="voice" id="voice-txt" placeholder="语音识别内容">
+                                        <input class="form-control" style="width:1100px" type="search" v-model="things.type" name="voice" id="voice-txt" placeholder="语音识别内容">
                                         <button type="button" id="start-btn" class="btn btn-sm btn-outline-secondary" style="font-size: 30px">语音识别</button>
                             </section>
+
+                            </div>
+
+                            <button type="button" name="checkCheck" class="btn btn-sm btn-outline-secondary" style="font-size: 30px" @click="checkIt(things.type)">查找有关商品</button>
+
                         </div>
 
                         <section class="fixed-box" id="fixed-box">
@@ -506,7 +512,31 @@
 
 <script src="./js/crypto-js.min.js"></script>
 <script src="./js/voice.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/axios.js"></script>
 
+<script>
+    new Vue({
+        el:'#vv',
+        data:{
+            things:{
+                type:''
+            }
+        },
+        methods:{
+            checkIt(type){
+                axios.get("http://localhost:8080/innovation/buy/checkIt?type="+type).then(res=>{
+                    if(res.data==="success"){
+                        console.log("success");
+                    }
+                }).catch(err=>{
+                    console.log(err);
+                })
+            }
+        }
+    })
+
+</script>
 <script>
     window.onload = function () {
         const voiceTxt = document.querySelector('#voice-txt');
@@ -584,7 +614,7 @@
 ***********************************-->
 <script src="plugins/common/common.min.js"></script>
 <script src="js/theme/custom.min.js"></script>
-<script src="js/theme//settings.js"></script>
+<script src="js/theme/settings.js"></script>
 <script src="js/theme/gleek.js"></script>
 <script src="js/theme/styleSwitcher.js"></script>
 

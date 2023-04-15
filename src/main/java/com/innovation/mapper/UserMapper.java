@@ -55,4 +55,7 @@ public interface UserMapper {
 
     @Select("select type from things where name=#{name}")
     String getOneType(String name);
+
+    @Select("select * from things where type like concat('%',#{type},'%')")
+    List<things> getType(String type);
 }
