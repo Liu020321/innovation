@@ -58,17 +58,22 @@
 
                                 <div class="col-xs-4">
                                     <select v-model="user.status" id="status" name="status" class="form-select" id="country" required>
-                                        <option >选择用户</option>
+                                        <option value="">选择用户</option>
                                         <option value="1">医生</option>
                                         <option value="0">患者</option>
                                     </select>
                                 </div>
-
-                                <div class="col-xs-8">
-                                    <input v-model="user.checkCode" name="checkCode" type="text" id="checkCode">
-                                    <img id="checkCodeImg" src="/innovation/user/checkCode">
-                                    <a href="#" id="changeImg" @click="refresh" >看不清？</a>
+                                <div class="row">
+                                    <div class="ml-3 form-group">
+                                        <input v-model="user.checkCode" name="checkCode" type="text" id="checkCode"
+                                               class="form-control" placeholder="验证码" required>
+                                    </div>
+                                    <div class="">
+                                        <img id="checkCodeImg" src="/innovation/user/checkCode">
+                                        <a href="#" id="changeImg" @click="refresh">看不清？</a>
+                                    </div>
                                 </div>
+
                                 <hr class="my-4">
                                 <button class="btn login-form__btn submit w-100" type="button" @click="register">注册</button>
                             </form>
