@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="华为云">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.48">
-    <root id="1"/>
+    <root id="1">
+      <DefaultCasing>exact</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <Grants>|root||root||ALTER|G
+|root||root||ALTER ROUTINE|G
+|root||root||CREATE|G
+|root||root||CREATE ROUTINE|G
+|root||root||CREATE TABLESPACE|G
+|root||root||CREATE TEMPORARY TABLES|G
+|root||root||CREATE USER|G
+|root||root||CREATE VIEW|G
+|root||root||DELETE|G
+|root||root||DROP|G
+|root||root||EVENT|G
+|root||root||EXECUTE|G
+|root||root||FILE|G
+|root||root||INDEX|G
+|root||root||INSERT|G
+|root||root||LOCK TABLES|G
+|root||root||PROCESS|G
+|root||root||REFERENCES|G
+|root||root||RELOAD|G
+|root||root||REPLICATION CLIENT|G
+|root||root||REPLICATION SLAVE|G
+|root||root||SELECT|G
+|root||root||SHOW DATABASES|G
+|root||root||SHOW VIEW|G
+|root||root||SHUTDOWN|G
+|root||mysql.session|localhost|SUPER|G
+|root||root||SUPER|G
+|root||root||TRIGGER|G
+|root||root||UPDATE|G
+|root||root||grant option|G
+performance_schema|schema||mysql.session|localhost|SELECT|G
+sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
+      <ServerVersion>5.7.40</ServerVersion>
+    </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
     </collation>
@@ -738,34 +775,114 @@
       <Host>localhost</Host>
     </user>
     <user id="233" parent="1" name="root"/>
-    <table id="234" parent="226" name="tb_user">
+    <table id="234" parent="226" name="shoppingcarts">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
-    <column id="235" parent="234" name="id">
-      <AutoIncrement>2</AutoIncrement>
-      <DasType>int(11)|0s</DasType>
+    <table id="235" parent="226" name="tb_user">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="236" parent="226" name="things">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <column id="237" parent="234" name="id">
+      <AutoIncrement>3</AutoIncrement>
+      <DasType>int(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="236" parent="234" name="user_name">
+    <column id="238" parent="234" name="name">
       <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="237" parent="234" name="password">
+    <column id="239" parent="234" name="type">
       <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="238" parent="234" name="status">
+    <column id="240" parent="234" name="price">
       <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <index id="239" parent="234" name="PRIMARY">
+    <column id="241" parent="234" name="count">
+      <DasType>int(20)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="242" parent="234" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="240" parent="234" name="PRIMARY">
+    <key id="243" parent="234" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="244" parent="235" name="id">
+      <AutoIncrement>5</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="245" parent="235" name="user_name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="246" parent="235" name="password">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="247" parent="235" name="status">
+      <DasType>int(11)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <index id="248" parent="235" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="249" parent="235" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="250" parent="236" name="id">
+      <AutoIncrement>7</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="251" parent="236" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="252" parent="236" name="type">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="253" parent="236" name="price">
+      <DasType>int(20)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="254" parent="236" name="count">
+      <DasType>int(20)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="255" parent="236" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="256" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
