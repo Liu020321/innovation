@@ -1,3 +1,0 @@
-PaddleDetection/ filter=lfs diff=lfs merge=lfs -text
-D:CodeJavaJAVAEEinnovationpythonPaddleDetection.zip filter=lfs diff=lfs merge=lfs -text
-PaddleDetection.zip filter=lfs diff=lfs merge=lfs -text
