@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <typeAliases>
+        <package name="com/innovation/pojo"/>
+        <!--替换成你的项目的实体类的路径-->
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+
+                <!--连接数据库信息-->
+                <property name="driver"
+                          value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url"
+                          value="jdbc:mysql://159.138.46.254:3306/innovation?useSSL=false&amp;useServerPrepStmts=true"/>
+                <property name="username"
+                          value="root"/>
+                <property name="password"
+                          value="12345678"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!-- 加载sql映射文件 -->
+        <!--     <mapper resource="com\lht\mapper\UserMapper.xml.xml"/> -->
+        <!-- 包扫描 -->
+        <package name="com.innovation.mapper"/>
+<!--        <mapper class="com.innovation.mapper.UserMapper"/>-->
+    </mappers>
+
+</configuration>
