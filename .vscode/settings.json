@@ -1,0 +1,60 @@
+/* {
+  "terminal.integrated.profile.windows": "C:\\Windows\\System32\\cmd.exe",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  //java源文件路径
+  "java.project.sourcePaths": [
+    "src/main/java",
+    "src/com.innovation.web.test/java",
+  ],
+  //关闭自动编译
+  "java.autobuild.enabled": false,
+  //关闭debug前强制编译
+  "java.debug.settings.forceBuildBeforeLaunch": false,
+  //使用Deploy插件来进行热部署时所需要的配置信息
+  "deploy": {
+    "packages": [
+      {
+        "name": "前端",
+        "description": "webapp里面的所有文件",
+        "files": [
+          "src/main/webapp/*",
+          "src/main/webapp/*/*",
+          "src/main/webapp/*.*",
+          "src/main/webapp/*/*.*",
+          "src/main/webapp/*/*/*.*",
+          "src/main/webapp/*/*/*/*.*",
+          "src/main/webapp/*/*/*/*/*.*",
+          "src/main/webapp/*/*/*/*/*",
+          "src/main/webapp/*/*/*/*/*/*.*",
+        ],
+        "exclude": [
+          "src/main/webapp/test/*"
+        ],
+        "deployOnSave": true,
+        "useTargetList": true,
+        "button": {
+          "text": "热部署",
+          "tooltip": "点击这里将前端部署到hotsite",
+          "targets": [
+            "HOTSITE"
+          ]
+        },
+      }
+    ],
+    "targets": [
+      {
+        "type": "local",
+        "name": "HOTSITE",
+        "description": "A local folder",
+        "dir": "target/innovation/",
+        "mappings": [
+          {
+            "source": "src/main/webapp",
+            "isRegEx": false,
+            "target": "/"
+          }
+        ]
+      }
+    ]
+  }
+} */
