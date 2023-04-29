@@ -56,8 +56,8 @@ public class BuyServlet extends BaseServlet{
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
-//        BufferedReader ur = req.getReader();
-//        String params = ur.readLine();
+        BufferedReader ur = req.getReader();
+        String params = ur.readLine();
 //
 //        shoppingcarts sp = JSON.parseObject(params, shoppingcarts.class);
 
@@ -66,43 +66,50 @@ public class BuyServlet extends BaseServlet{
 
         String name=JSON.toJSONString(name1);
 
+
         System.out.println(name);
 
+        //根据name确认购物车是否存在该项物品
         boolean b=userService.ifOk(name);
+
+        System.out.println(b);
 
 
         if(b){//如果数据已经存在
-            //执行修改数据操作
-            boolean t=userService.ifUpdateOk(name);
-            if(t){//如果修改成功
+
+            //数据已经存在，数量+1---执行修改操作
+            boolean a=userService.ifUpdateOk(name);//修改数量数据+1
+            if(a){
                 resp.setContentType("text/json;charset=utf-8");
                 resp.getWriter().write("success");
-            }else{//修改失败
+            }else{
                 resp.setContentType("text/json;charset=utf-8");
                 resp.getWriter().write("fail");
             }
 
         }else{//数据并不存在
-            //执行添加操作
-            int price=userService.getOnePrice(name);
+
+            //数据不存在--新添加一条数据
+
+            //根据name查找到相应数据
+            float price=userService.getOnePrice(name);
             String type=userService.getOneType(name);
+
 
             shoppingcarts sc=new shoppingcarts();
             sc.setName(name);
-            sc.setType(type);
             sc.setPrice(price);
+            sc.setType(type);
             sc.setCount(1);
 
-            boolean m=userService.addThings(sc);
+            boolean c=userService.addThings(sc);
 
-            if(m){//添加成功
+            if(c){
                 resp.setContentType("text/json;charset=utf-8");
                 resp.getWriter().write("success");
-
-            }else{//添加失败
+            }else{
                 resp.setContentType("text/json;charset=utf-8");
                 resp.getWriter().write("fail");
-
             }
 
         }
