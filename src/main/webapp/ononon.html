@@ -276,7 +276,7 @@
             <i class="icon-globe-alt menu-icon"></i><span class="nav-text">一键购物</span>
           </a>
           <ul aria-expanded="false">
-            <li><a href="./OnclickShopping.html">点击购物</a></li>
+            <li><a href="./ononon.html">点击购物</a></li>
             <li><a href="./VoiceShopping.html">语音购物</a></li>
             <li><a href="./ViewShoppingCarts.html">查看购物车</a></li>
           </ul>
@@ -345,7 +345,6 @@
                 <div id="on">
                 <table>
                   <tr v-for="(on,index) in list" :key="index">
-                    <td>
                       <div class="col">
                         <div class="card shadow-sm">
                           <img src="images/index/dog1.png"/>
@@ -354,11 +353,10 @@
                             <p class="card-text">{{on.price}}</p>
                             <p class="card-text">{{on.name}}</p>
                             <p class="card-text">{{on.type}}</p>
-                                  <button type="button" class="btn btn-sm btn-outline-secondary" @click="addData(on.name)">加入购物车</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" @click="addIt(on.name)">加入购物车</button>
                           </div>
                         </div>
                       </div>
-                    </td>
                   </tr>
                 </table>
                 </div>
@@ -411,12 +409,11 @@
     },
 
     methods:{
-      responseType:'arraybuffer',
       //加入购物车
       addData(name){
-        axios.add("http://localhost:8080/innovation/buy/addCarts?name="+name)
-                .then(resp=>{
-                  if(resp.data==="success"){
+        axios.get("http://localhost:8080/innovation/buy/addCarts?name="+name)
+                .then(res=>{
+                  if(res.data==="success"){
                     this.getList();
                   }
                 }).catch(err=>{

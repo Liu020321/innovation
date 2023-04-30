@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5625d098-1c60-4203-b6e7-34a9009dc33f" name="Changes" comment="代码更改">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/innovation/web/VideoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/innovation.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/innovation/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/innovation/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/innovation/web/BuyServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/innovation/web/BuyServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/OnclickShopping.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/OnclickShopping.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/OneClickPay.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/OneClickPay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewShoppingCarts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ViewShoppingCarts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/VoiceShopping.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/VoiceShopping.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/index/dog1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/index/dog1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ononon.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ononon.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileColors">
+    <fileColor scope="Project Files" color="Yellow" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../Environments/Maven/maven3.9.0" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="D:\Environments\Maven\maven3.9.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="2OzRdIpGZ2V6qYm938K0G5mvVLS" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Merging main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.build.tools.auto.reload": "ALL",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5625d098-1c60-4203-b6e7-34a9009dc33f" name="Changes" comment="" />
+      <created>1680341715643</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680341715643</updated>
+      <workItem from="1682561514939" duration="200000" />
+      <workItem from="1682603992292" duration="631000" />
+      <workItem from="1682650896244" duration="1982000" />
+      <workItem from="1682654241214" duration="1666000" />
+      <workItem from="1682666280483" duration="1774000" />
+      <workItem from="1682669522673" duration="1442000" />
+      <workItem from="1682671109721" duration="248000" />
+      <workItem from="1682671418972" duration="421000" />
+      <workItem from="1682672201507" duration="412000" />
+      <workItem from="1682700961997" duration="333000" />
+      <workItem from="1682757190789" duration="2109000" />
+      <workItem from="1682838539382" duration="1373000" />
+    </task>
+    <task id="LOCAL-00001" summary="实现rtsp推流到页面">
+      <created>1682757224332</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682757224332</updated>
+    </task>
+    <task id="LOCAL-00002" summary="实现rtsp推流到页面">
+      <created>1682757248542</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682757248542</updated>
+    </task>
+    <task id="LOCAL-00003" summary="实现rtsp推流到页面">
+      <created>1682757926584</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682757926584</updated>
+    </task>
+    <task id="LOCAL-00004" summary="代码更改">
+      <created>1682841205449</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682841205449</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="实现rtsp推流到页面" />
+    <MESSAGE value="代码更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="代码更改" />
+  </component>
+</project>

@@ -29,7 +29,7 @@ public interface UserMapper {
     @Select("select * from shoppingcarts")
     List<shoppingcarts> selectAllThings();
 
-    @Insert("insert into shoppingcarts values(#{name},#{type},#{price},#{count})")
+    @Insert("insert into shoppingcarts values(#{id},#{name},#{type},#{price},#{count})")
     boolean addThings(shoppingcarts sc);
 
     @Delete("delete from shoppingcarts where id=#{id}")
@@ -47,7 +47,7 @@ public interface UserMapper {
     @Select("select * from shoppingcarts where name=#{name}")
     boolean ifOk(String name);
 
-    @Update("update shoppingcarts set count=#{count}+1 where where name=#{name}")
+    @Update("update shoppingcarts set count=#{count}+1 where name=#{name}")
     boolean ifUpdateOk(String name);
 
     @Select("select price from things where name=#{name}")
@@ -58,4 +58,6 @@ public interface UserMapper {
 
     @Select("select * from things where type like concat('%',#{type},'%')")
     List<things> getType(String type);
+
+
 }
