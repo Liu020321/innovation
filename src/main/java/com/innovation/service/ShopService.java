@@ -10,4 +10,6 @@ public interface ShopService {
     boolean shopCar(int shopId);
 
     List<Shop> selectAllCount();
+
+    List<Shop> selectByVoice(String information);
 }

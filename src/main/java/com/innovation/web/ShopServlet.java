@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 @WebServlet("/shop/*")
@@ -86,6 +87,49 @@ public class ShopServlet extends BaseServlet {
         //3. 响应数据
         resp.getWriter().write(jsonString);
 
+    }
+
+    public void selectByVoice(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=utf-8");
+
+        BufferedReader ur = req.getReader();
+
+        String data=req.getReader().readLine();
+        System.out.println(data);
+
+        //分割字符串
+        String[] data1=data.split(":|\"|}");
+
+        int count=data1.length;
+
+        String data2=data1[count-1];
+        System.out.println(data2);
+
+
+
+
+
+
+//        System.out.println(params);
+//
+//        JSONObject jsonObject=JSON.parseObject(params);
+
+
+//        String information = jsonObject.getString("voiceText");
+
+        //String information=req.getParameter("voice");
+        //String information=req.getParameter("voiceText");
+
+//        System.out.println("医疗");
+
+        List<Shop> list=shopService.selectByVoice(data2);
+        for(int i=0;i<list.size();i++){
+            System.out.println(list.get(i).getShopName()+"  "+list.get(i).getShopType());
+        }
+
+        String jsonString=JSON.toJSONString(list);
+        resp.getWriter().write(jsonString);
     }
 
 }

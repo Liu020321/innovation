@@ -71,4 +71,17 @@ public class ShopServiceImpl implements ShopService {
 
         return shops;
     }
+
+    @Override
+    public List<Shop> selectByVoice(String information) {
+        SqlSession sqlSession = factory.openSession();
+
+        ShopMapper mapper = sqlSession.getMapper(ShopMapper.class);
+
+        List<Shop> list=mapper.selectByVoice(information);
+        sqlSession.close();
+        return list;
+    }
+
+
 }

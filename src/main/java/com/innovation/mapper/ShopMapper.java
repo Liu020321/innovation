@@ -24,4 +24,8 @@ public interface ShopMapper {
     @Select("select  * from innovation.shop where shop.shopCount != ''")
     @ResultMap("shopResultMap")
     List<Shop> selectAllCount();
+
+    @Select("select * from innovation.shop where shop.shopType like concat('%',#{shopType},'%')")
+    @ResultMap("shopResultMap")
+    List<Shop> selectByVoice(String information);
 }
