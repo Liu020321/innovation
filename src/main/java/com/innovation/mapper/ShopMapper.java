@@ -2,6 +2,7 @@ package com.innovation.mapper;
 
 import com.innovation.pojo.Shop;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 
@@ -14,9 +15,13 @@ public interface ShopMapper {
 
     @Insert("UPDATE innovation.shop set shopCount = #{shopCount} where shopId=#{shopId}")
     @ResultMap("shopResultMap")
-    void addShop(Shop shop);
+    void addShop(@Param("shopCount") String shopCount,@Param("shopId") int shopId);
 
     @Select("select shop.shopCount from innovation.shop where shop.shopId=#{shopId}")
     @ResultMap("shopResultMap")
-    List<Shop> selectByshopId(int shopId);
+    Shop selectByshopId(@Param("shopId") int shopId);
+
+    @Select("select  * from innovation.shop where shop.shopCount <> ''")
+    @ResultMap("shopResultMap")
+    List<Shop> selectAllCount();
 }

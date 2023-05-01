@@ -8,4 +8,6 @@ public interface ShopService {
     List<Shop> selectShop();
 
     boolean shopCar(int shopId);
+
+    List<Shop> selectAllCount();
 }

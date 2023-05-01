@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="referrer" content="no-referrer">
+
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>点击购物界面</title>
     <!-- Favicon icon -->
@@ -460,7 +464,6 @@
                 }).then(resp => {
                     if (resp.data == "success") {
                         alert("添加成功")
-                        location.href = "http://localhost:8080/innovation/index.html"
                     }
 
                 })

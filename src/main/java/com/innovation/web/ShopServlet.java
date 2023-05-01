@@ -45,11 +45,12 @@ public class ShopServlet extends BaseServlet {
 
         JSONObject jsonObject=JSON.parseObject(params);
 
-
         // 获取用户输入的验证码
         String shopI = jsonObject.getString("shopId");
 
         int shopId=Integer.parseInt(shopI);
+
+        System.out.println(shopId);
 
         //2. 调用service 注册
         boolean flag = shopService.shopCar(shopId);
@@ -72,9 +73,18 @@ public class ShopServlet extends BaseServlet {
 
     }
 
-    public void deleteAll(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void selectAllCount(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         req.setCharacterEncoding("utf-8");
-        resp.setContentType("text/html;charset=utf-8");
+        resp.setContentType("text/json;charset=utf-8");
+
+        //1. 调用Service查询
+        List<Shop> shops = shopService.selectAllCount();
+
+        //2. 将集合转换为JSON数据   序列化
+        String jsonString = JSON.toJSONString(shops);
+
+        //3. 响应数据
+        resp.getWriter().write(jsonString);
 
     }
 

@@ -1,10 +1,6 @@
 package com.innovation.service;
 
 import com.innovation.pojo.User;
-import com.innovation.pojo.Shop;
-import com.innovation.pojo.things;
-
-import java.util.List;
 
 public interface UserService {
 

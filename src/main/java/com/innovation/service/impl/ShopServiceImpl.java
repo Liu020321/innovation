@@ -36,33 +36,39 @@ public class ShopServiceImpl implements ShopService {
         //3. 获取UserMapper
         ShopMapper mapper = sqlSession.getMapper(ShopMapper.class);
 
-        List<Shop> shopC = mapper.selectByshopId(shopId);
+        Shop shop = mapper.selectByshopId(shopId);
 
-        System.out.println(shopC);
+        String shopCount = shop.getShopCount();
 
-        System.out.println("shopCount="+ shopC.get(0).getShopCount());
-        String shopCount1=String.valueOf(shopC.get(0).getShopCount());
-        System.out.println(shopCount1);
-        String shopCount=String.valueOf(Integer.parseInt(shopCount1)+1);
+        if (shopCount==null||"".equals(shopCount)) {
+              shopCount= String.valueOf('1');
 
-//        if (null == shopCount && "".equals(shopCount)) {
-//            shopCount = "1";
-//        } else {
-//            int count=Integer.parseInt(shopCount);
-//            count+=1;
-//            shopCount=Integer.toString(count);
-//        }
+        } else {
+            int count = Integer.parseInt(shopCount);
+            count += 1;
+            shopCount = Integer.toString(count);
+        }
 
-        Shop shop=new Shop();
-        shop.setShopId(shopId);
-        shop.setShopCount(shopCount);
+        mapper.addShop(shopCount,shopId);
 
-        mapper.addShop(shop);
         sqlSession.commit();
 
         sqlSession.close();
 
-        return 1==1;
+        return 1 == 1;
 
+    }
+
+    @Override
+    public List<Shop> selectAllCount() {
+        SqlSession sqlSession = factory.openSession();
+
+        ShopMapper mapper = sqlSession.getMapper(ShopMapper.class);
+
+        List<Shop> shops = mapper.selectAllCount();
+
+        sqlSession.close();
+
+        return shops;
     }
 }

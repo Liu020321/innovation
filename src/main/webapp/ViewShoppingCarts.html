@@ -373,10 +373,6 @@
                                             </button>
                                         </td>
                                     </tr>
-
-                                    <tr v-if="list.length==0">
-                                        <td colspan="5">没有购物车数据</td>
-                                    </tr>
                                     </tbody>
 
                                 </table>
@@ -462,10 +458,9 @@
             shop() {
                 axios({
                     method: "get",
-                    url: "http://localhost:8080/innovation/shop/shop",
+                    url: "http://localhost:8080/innovation/shop/selectAllCount",
                 }).then(resp => {
                     this.shops = resp.data;
-                    console.log(shops.shopName)
                 })
             }
         }
