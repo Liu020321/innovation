@@ -15,13 +15,13 @@ public interface ShopMapper {
 
     @Insert("UPDATE innovation.shop set shopCount = #{shopCount} where shopId=#{shopId}")
     @ResultMap("shopResultMap")
-    void addShop(@Param("shopCount") String shopCount,@Param("shopId") int shopId);
+    void addShop(@Param("shopCount") String shopCount, @Param("shopId") int shopId);
 
     @Select("select shop.shopCount from innovation.shop where shop.shopId=#{shopId}")
     @ResultMap("shopResultMap")
     Shop selectByshopId(@Param("shopId") int shopId);
 
-    @Select("select  * from innovation.shop where shop.shopCount <> ''")
+    @Select("select  * from innovation.shop where shop.shopCount != ''")
     @ResultMap("shopResultMap")
     List<Shop> selectAllCount();
 }
