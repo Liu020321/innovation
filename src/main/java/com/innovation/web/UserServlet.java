@@ -78,8 +78,7 @@ public class UserServlet extends BaseServlet {
             //注册失败，跳转到注册页面
 
             req.setAttribute("register_msg","用户名已存在");
-            req
-                    .getRequestDispatcher("/register.jsp").forward(req,resp);
+            req.getRequestDispatcher("/register.jsp").forward(req,resp);
         }
 
     }

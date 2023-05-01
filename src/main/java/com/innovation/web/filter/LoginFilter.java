@@ -35,7 +35,6 @@ public class LoginFilter implements Filter {
         //1. 判断session中是否有user
         HttpSession session = req.getSession();
         Object user = session.getAttribute("user");
-        System.out.println(user);
 
         //2. 判断user是否为null
         if(user != null){

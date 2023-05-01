@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.innovation.mapper.ShopMapper">
+
+    <resultMap id="shopResultMap" type="Shop">
+        <result property="shopId" column="shopId"/>
+        <result property="shopImg" column="shopImg"/>
+        <result property="shopName" column="shopName"/>
+        <result property="shopPrice" column="shopPrice"/>
+        <result property="shopType" column="shopType"/>
+        <result property="shopMes" column="shopMes"/>
+        <result property="shopCount" column="shopCount"/>
+    </resultMap>
+
+
+</mapper>
