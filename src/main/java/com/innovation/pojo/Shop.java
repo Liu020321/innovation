@@ -19,6 +19,10 @@ public class Shop {
         this.shopId = shopId;
     }
 
+    public Shop(){
+        super();
+    }
+
     public Shop(int shopId, String shopImg, String shopName, float shopPrice, String shopType, String shopMes, String shopCount) {
         super();
         this.shopId = shopId;

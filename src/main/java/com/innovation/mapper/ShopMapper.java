@@ -14,9 +14,9 @@ public interface ShopMapper {
 
     @Insert("UPDATE innovation.shop set shopCount = #{shopCount} where shopId=#{shopId}")
     @ResultMap("shopResultMap")
-    void addShop(String shopCount,int shopId);
+    void addShop(Shop shop);
 
     @Select("select shop.shopCount from innovation.shop where shop.shopId=#{shopId}")
     @ResultMap("shopResultMap")
-    List<String> selectByshopId(int shopId);
+    List<Shop> selectByshopId(int shopId);
 }

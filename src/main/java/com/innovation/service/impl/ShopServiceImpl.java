@@ -36,11 +36,13 @@ public class ShopServiceImpl implements ShopService {
         //3. 获取UserMapper
         ShopMapper mapper = sqlSession.getMapper(ShopMapper.class);
 
-        List<String> shopC = mapper.selectByshopId(shopId);
+        List<Shop> shopC = mapper.selectByshopId(shopId);
 
         System.out.println(shopC);
 
-        String shopCount= String.valueOf(shopC);
+        System.out.println("shopCount="+ shopC.get(0).getShopCount());
+        String shopCount=String.valueOf(shopC.get(0).getShopCount());
+        System.out.println(shopCount);
 
 //        if (null == shopCount && "".equals(shopCount)) {
 //            shopCount = "1";
@@ -49,7 +51,12 @@ public class ShopServiceImpl implements ShopService {
 //            count+=1;
 //            shopCount=Integer.toString(count);
 //        }
-        mapper.addShop(shopCount, shopId);
+
+        Shop shop=new Shop();
+        shop.setShopId(shopId);
+        shop.setShopCount(shopCount);
+
+        mapper.addShop(shop);
         sqlSession.commit();
 
         sqlSession.close();
