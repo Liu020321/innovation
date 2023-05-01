@@ -41,8 +41,9 @@ public class ShopServiceImpl implements ShopService {
         System.out.println(shopC);
 
         System.out.println("shopCount="+ shopC.get(0).getShopCount());
-        String shopCount=String.valueOf(shopC.get(0).getShopCount());
-        System.out.println(shopCount);
+        String shopCount1=String.valueOf(shopC.get(0).getShopCount());
+        System.out.println(shopCount1);
+        String shopCount=String.valueOf(Integer.parseInt(shopCount1)+1);
 
 //        if (null == shopCount && "".equals(shopCount)) {
 //            shopCount = "1";
