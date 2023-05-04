@@ -342,13 +342,12 @@
         </div>
         <!-- row -->
 
-        <div class="container-fluid">
+        <div class="container-fluid" id="vv">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <div id="voice">
                     <div class="card">
                         <section class="voice-box">
-                                <input type="search" name="voice" v-model="voiceText" id="voice-txt" />
+                                <input type="search" name="voice-txt" v-model="voiceText" id="voice-txt" />
                             <input type="button" v-on:click="check()" value="查询商品"/>
                             <button id="start-btn">开始识别</button>
                         </section>
@@ -358,13 +357,10 @@
                                 <button class="fixed-close" id="close-btn"></button>
                                 <div id="fixed-txt">Hello! 请说出你想说的话~</div>
                                 <div class="fixed-icon">
-                                    <img src="./img/voice.png" alt="" />
+                                    <img src="images/theme/favicon.png" alt="" />
                                 </div>
                             </div>
                         </section>
-
-                        <script src="js/voice/crypto-js.min.js"></script>
-                        <script src="js/voice/voice.js"></script>
 
                         <script>
                             window.onload = function () {
@@ -379,9 +375,9 @@
                                 const voice = new Voice({
 
                                     // 服务接口认证信息 注：apiKey 和 apiSecret 的长度都差不多，请要填错哦，！
-                                    appId: '049929e2',
-                                    apiSecret: 'ZmYyYmY0YTljOGI5M2FmZmJjODQ5YWRm',
-                                    apiKey: 'a5ccb1453f856c01f2da73b223b4c209',
+                                    appId: '526a987f',
+                                    apiSecret: 'MGY1NjI2ZTE4MmI1Yjc3ZWUxYWM2ZWU5',
+                                    apiKey: 'ea945bf67c6a049fc123cebf17ef5455',
                                     // 注：要获取以上3个参数，请到迅飞开放平台：https://www.xfyun.cn/services/voicedictation 【注：这是我的迅飞语音听写（流式版）每天服务量500（也就是调500次），如果你需求里大请购买服务量：https://www.xfyun.cn/services/voicedictation?target=price】
 
                                     onWillStatusChange: function (oldStatus, newStatus) {
@@ -400,7 +396,7 @@
                                                 this.stop(); // voice.stop();
                                                 fixedBox.style.display = 'none';
                                             }, 3000);
-                                        };
+                                        }
                                     }
                                 });
 
@@ -416,7 +412,6 @@
                                 };
                             };
                         </script>
-                    </div>
 
 
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -443,66 +438,13 @@
                         </div>
                     </div>
                     </div>
-                    </div>
-
-                    </div>
                 </div>
             </div>
         </div>
-        <!-- #/ container -->
     </div>
+</div>
+        <!-- #/ container -->
 
-
-<script>
-    window.onload = function () {
-        const voiceTxt = document.querySelector('#voice-txt');
-        const startBtn = document.querySelector('#start-btn');
-        const fixedBox = document.querySelector('#fixed-box');
-        const fixedTxt = document.querySelector('#fixed-txt');
-        const closeBtn = document.querySelector('#close-btn');
-        let times = null;
-
-        // 实例化迅飞语音听写（流式版）WebAPI
-        const voice = new Voice({
-
-            // 服务接口认证信息 注：apiKey 和 apiSecret 的长度都差不多，请要填错哦，！
-            appId: '049929e2',
-            apiSecret: 'ZmYyYmY0YTljOGI5M2FmZmJjODQ5YWRm',
-            apiKey: 'a5ccb1453f856c01f2da73b223b4c209',
-            // 注：要获取以上3个参数，请到迅飞开放平台：https://www.xfyun.cn/services/voicedictation 【注：这是我的迅飞语音听写（流式版）每天服务量500（也就是调500次），如果你需求里大请购买服务量：https://www.xfyun.cn/services/voicedictation?target=price】
-
-            onWillStatusChange: function (oldStatus, newStatus) {
-                //可以在这里进行页面中一些交互逻辑处理：注：倒计时（语音听写只有60s）,录音的动画，按钮交互等！
-                fixedBox.style.display = 'block';
-            },
-            onTextChange: function (text) {
-                //监听识别结果的变化
-                voiceTxt.value = text;
-                fixedTxt.innerText = text;
-
-                // 3秒钟内没有说话，就自动关闭
-                if (text) {
-                    clearTimeout(times);
-                    times = setTimeout(() => {
-                        this.stop(); // voice.stop();
-                        fixedBox.style.display = 'none';
-                    }, 3000);
-                };
-            }
-        });
-
-        // 开始识别
-        startBtn['onclick'] = function () {
-            voice.start();
-        };
-
-        // 关闭识别
-        closeBtn['onclick'] = function () {
-            voice.stop();
-            fixedBox.style.display = 'none';
-        };
-    };
-</script>
 <!--**********************************
     Content body end
 ***********************************-->
@@ -528,6 +470,9 @@
 <!--**********************************
     Scripts
 ***********************************-->
+<script src="js/voice/crypto-js.min.js"></script>
+<script src="js/voice/voice.js"></script>
+
 <script src="plugins/common/common.min.js"></script>
 <script src="js/theme/custom.min.js"></script>
 <script src="js/theme/settings.js"></script>
@@ -560,7 +505,7 @@
 
 <script>
     new Vue({
-        el: "#voice",
+        el: "#vv",
         data() {
             return {
                 shops: [],
