@@ -25,7 +25,7 @@ public interface ShopMapper {
     @ResultMap("shopResultMap")
     List<Shop> selectAllCount();
 
-    @Select("select * from innovation.shop where shop.shopType like concat('%',#{shopType},'%') or shop.shopName like concat('%',#{shopName},'%') or shop.shopMes like concat('%',#{shopMes},'%')")
+    @Select("select * from innovation.shop where shop.shopName like concat('%',#{shopName},'%') or shop.shopMes like concat('%',#{shopMes},'%')")
     @ResultMap("shopResultMap")
     List<Shop> selectByVoice(String information);
 }
