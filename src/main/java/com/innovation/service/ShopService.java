@@ -12,4 +12,6 @@ public interface ShopService {
     List<Shop> selectAllCount();
 
     List<Shop> selectByVoice(String information);
+
+    boolean deleteOne(int id);
 }

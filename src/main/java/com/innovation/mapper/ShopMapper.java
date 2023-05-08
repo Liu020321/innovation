@@ -28,4 +28,8 @@ public interface ShopMapper {
     @Select("select * from innovation.shop where shop.shopName like concat('%',#{shopName},'%') or shop.shopMes like concat('%',#{shopMes},'%')")
     @ResultMap("shopResultMap")
     List<Shop> selectByVoice(String information);
+
+    @Select("delete from innovation.shop where shop.shopId=#{shopId}")
+    @ResultMap("shopResultMap")
+    void deleteOne(int id);
 }

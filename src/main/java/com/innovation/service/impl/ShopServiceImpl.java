@@ -1,9 +1,7 @@
 package com.innovation.service.impl;
 
 import com.innovation.mapper.ShopMapper;
-import com.innovation.mapper.UserMapper;
 import com.innovation.pojo.Shop;
-import com.innovation.pojo.User;
 import com.innovation.service.ShopService;
 import com.innovation.util.SqlSessionFactoryUtils;
 import org.apache.ibatis.session.SqlSession;
@@ -81,6 +79,19 @@ public class ShopServiceImpl implements ShopService {
         List<Shop> list=mapper.selectByVoice(information);
         sqlSession.close();
         return list;
+    }
+
+    @Override
+    public boolean deleteOne(int id) {
+        SqlSession sqlSession = factory.openSession();
+
+        ShopMapper mapper = sqlSession.getMapper(ShopMapper.class);
+
+        mapper.deleteOne(id);
+        sqlSession.commit();
+        sqlSession.close();
+
+        return 1==1;
     }
 
 

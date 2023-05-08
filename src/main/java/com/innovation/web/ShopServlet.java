@@ -72,6 +72,7 @@ public class ShopServlet extends BaseServlet {
         resp.setContentType("text/html;charset=utf-8");
 
 
+
     }
 
     public void selectAllCount(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -130,6 +131,24 @@ public class ShopServlet extends BaseServlet {
 
         String jsonString=JSON.toJSONString(list);
         resp.getWriter().write(jsonString);
+    }
+
+    public void deleteOne(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setContentType("text/json;charset=utf-8");
+
+        String id1=req.getParameter("id");
+        int id=Integer.parseInt(id1);
+
+        System.out.println(id);
+
+        boolean b=shopService.deleteOne(id);
+
+        if(b){
+            resp.getWriter().write("success");
+        }else{
+            resp.getWriter().write("fail");
+        }
     }
 
 }

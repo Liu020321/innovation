@@ -342,7 +342,7 @@
         </div>
         <!-- row -->
 
-        <div class="container-fluid" id="app">
+        <div class="container-fluid" id="all">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -444,7 +444,7 @@
 
 <script>
     new Vue({
-        el: "#app",
+        el: "#all",
         data() {
             return {
                 shops: [],
@@ -459,6 +459,14 @@
                 axios({
                     method: "get",
                     url: "http://localhost:8080/innovation/shop/selectAllCount",
+                }).then(resp => {
+                    this.shops = resp.data;
+                })
+            },
+            deleteData(id){
+                axios({
+                    method: "post",
+                    url: "http://localhost:8080/innovation/shop/deleteOne?id="+id,
                 }).then(resp => {
                     this.shops = resp.data;
                 })
